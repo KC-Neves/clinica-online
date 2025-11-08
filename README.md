@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./banner-clinica.jpg" alt="Banner Clínica Online" width="100%" />
+</p>
+
 # 🏥 Clínica Online — Sistema Completo de Gestão de Consultas 
 
 Um sistema **Fullstack completo** desenvolvido para o **agendamento, acompanhamento e visualização de consultas médicas**.  
