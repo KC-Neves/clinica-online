@@ -2,59 +2,71 @@
   <img src="./banner-clinica.jpg" alt="Banner Clínica Online" width="100%" />
 </p>
 
-# 🏥 Clínica Online — Sistema Completo de Gestão de Consultas 
+# 🏥 Clínica Online — Sistema Completo de Gestão de Consultas e Agendamentos
 
-Um sistema **Fullstack completo** desenvolvido para o **agendamento, acompanhamento e visualização de consultas médicas**.  
-Conta com **frontend moderno em React + TailwindCSS** e **backend seguro com Node.js, Express e MongoDB Atlas**.
+![Banner do Projeto](banner-clinica.jpg)
+
+Um sistema Fullstack robusto de ponta a ponta desenvolvido para automatizar e otimizar fluxos operacionais de clínicas médicas, laboratórios e postos de coleta. A aplicação une uma interface moderna e dinâmica em React à eficiência de uma API RESTful em Node.js, utilizando o MongoDB Atlas para persistência segura de dados.
 
 ---
 
-## 🌟 Visão Geral
+## 🎯 Contexto Hospitalar e Regras de Negócio (O Diferencial de Saúde)
+Durante minha trajetória de 7 anos atuando na linha de frente de laboratórios diagnósticos e salas de vacinas, presenciei como falhas na centralização de agendas e falta de validações de dados geram gargalos e atrasos operacionais. 
 
-A **Clínica Online** permite que pacientes e profissionais de saúde interajam de forma simples e eficiente.  
-O sistema inclui **autenticação JWT**, **cadastro de pacientes**, **agendamento de consultas**,  
-e um **dashboard interativo** para análise e gestão.
+Este ecossistema foi projetado para mitigar esses problemas reais do setor de saúde:
+- **Agendamento Concorrente Inteligente:** Lógica backend mapeada para mitigar duplicidade ou conflito de horários para um mesmo profissional de saúde na grade clínica.
+- **Histórico Centralizado de Consultas:** Persistência no MongoDB estruturada para garantir a continuidade das informações do ciclo do paciente, simulando um Prontuário Eletrônico do Paciente (PEP).
+- **Interface Otimizada para Recepção:** Telas fluidas e responsivas projetadas para diminuir o tempo de atendimento e triagem nas secretarias hospitalares e postos de coleta.
+
+---
+
+## 📑 Sumário
+1. 🎯 Contexto Hospitalar e Regras de Negócio
+2. ⚙️ Tecnologias Utilizadas
+3. 📁 Estrutura do Projeto
+4. 🔐 Funcionalidades Principais
+5. 🚀 Implantações (Deploy)
+6. 🧪 Testes da API (Thunder Client / Postman)
+7. 🧭 Como Executar Localmente
+8. 🧠 Próximas Funcionalidades
+9. 👩‍💻 Desenvolvido por
 
 ---
 
 ## ⚙️ Tecnologias Utilizadas
 
-### 💻 Frontend (`/frontend`)
-- React + Vite  
-- TailwindCSS  
-- Chart.js  
-- Autenticação JWT via API  
-- Consumo de API com Fetch  
-- Modo Claro/Escuro  
-- Dashboard dinâmico e responsivo  
+### 💻 Frontend ( `/frontend` )
+- **React + Vite** – Arquitetura SPA ágil e componentizada
+- **TailwindCSS** – Estilização utilitária totalmente responsiva
+- **Chart.js** – Renderização dinâmica de indicadores de saúde
+- **LocalStorage** – Gerenciamento do ciclo de vida seguro do token JWT
+- **Fetch API** – Consumo fluido dos endpoints do servidor backend
 
-### 🧠 Backend (`/backend`)
-- Node.js + Express  
-- MongoDB Atlas (via Mongoose)  
-- Autenticação com JWT  
-- Criptografia com bcrypt.js  
-- Dotenv para variáveis de ambiente  
-- Estrutura modular (Models, Routes, Controllers)
+### 🧠 Backend ( `/backend` )
+- **Node.js + Express** – Servidor backend modular e escalável
+- **MongoDB Atlas** – Banco de dados NoSQL ideal para históricos clínicos flexíveis
+- **Mongoose** – ODM para modelagem e consistência de esquemas de dados
+- **JWT (Json Web Token)** – Autenticação e proteção rigorosa de rotas privadas
+- **bcrypt.js** – Criptografia para segurança de credenciais médicas
 
 ---
 
 ## 📁 Estrutura do Projeto
-```
+```text
 clinica-online/
-├── frontend/ → Interface React (Saúde+ Dashboard)
-│ ├── src/
-│ ├── public/
-│ ├── package.json
-│ └── vite.config.js
+├── frontend/         → Interface React (Painel Clínico)
+│   ├── src/
+│   ├── public/
+│   ├── package.json
+│   └── vite.config.js
 │
-├── backend/ → API Node.js/Express (Pacientes e Consultas)
-│ ├── src/
-│ │ ├── models/
-│ │ ├── routes/
-│ │ ├── controllers/
-│ │ └── server.js
-│ ├── package.json
-│ └── .env
+├── backend/          → API RESTful (Pacientes e Consultas)
+│   ├── src/
+│   │   ├── models/       → Modelos e Esquemas Mongoose
+│   │   ├── routes/       → Definição de endpoints protegidos
+│   │   └── controllers/  → Controladores e regras de negócio
+│   ├── package.json
+│   └── .env
 │
 └── README.md
 ```
@@ -62,31 +74,26 @@ clinica-online/
 ---
 
 ## 🔐 Funcionalidades Principais
-
-✅ Login com autenticação JWT  
-✅ Cadastro e listagem de pacientes  
-✅ Agendamento e cancelamento de consultas  
-✅ Dashboard interativo com gráficos  
-✅ Filtro de pacientes e modo escuro  
-✅ Deploy completo (frontend + backend)
-
----
-
-## 🚀 Deploys
-
-- **Frontend (Vercel):** [saude-dashboard-wine.vercel.app](https://saude-dashboard-wine.vercel.app)  
-- **Backend (Render):** [api-pacientes-vh6j.onrender.com](https://api-pacientes-vh6j.onrender.com)
+- [x] **Autenticação Segura:** Login clínico restrito com token JWT.
+- [x] **Gestão de Registros:** Cadastro unificado e listagem dinâmica de pacientes.
+- [x] **Agendamento Ágil:** Ciclo básico de agendamento e cancelamento de consultas.
+- [x] **Telemetria Visual:** Painel interativo com gráficos de monitoramento clínico (Chart.js).
+- [x] **Ergonomia Visual:** Modo Claro e Escuro para o conforto visual em plantões.
+- [x] **Ambiente em Nuvem:** Deploy completo realizado de ponta a ponta.
 
 ---
 
-## 🧪 Testes de API (Thunder Client / Postman)
+## 🚀 Implantações (Deploy)
+- **Interface Web (Vercel):** 🔗 [https://vercel.app](https://vercel.app)
+- **API Backend (Render):** 🔗 [https://api-pacientes-vh6j.onrender.com](https://api-pacientes-vh6j.onrender.com)
 
-### ➕ Criar Paciente (POST)
+---
 
+## 🧪 Testes da API (Thunder Client / Postman)
 
-POST https://api-pacientes-vh6j.onrender.com/api/pacientes
-
-Body (JSON):
+**➕ Criar Novo Paciente (POST)**
+`POST https://api-pacientes-vh6j.onrender.com/api/pacientes`
+*Corpo em formato JSON:*
 ```json
 {
   "nome": "Ana Souza",
@@ -98,75 +105,60 @@ Body (JSON):
 }
 ```
 
+**📋 Listar Pacientes Triados (GET)**
+`GET https://api-pacientes-vh6j.onrender.com/api/pacientes`
+
+**🔐 Autenticação de Usuário (POST)**
+`POST https://api-pacientes-vh6j.onrender.com/api/auth/login`
+*Credenciais de teste:*
+- **E-mail:** `kelly@email.com`
+- **Senha:** `001010`
+
 ---
 
-## 📋 Listar Pacientes (GET)
+## 🧭 Como Executar Localmente
 
-GET https://api-pacientes-vh6j.onrender.com/api/pacientes
-
-🔐 Login (POST)
-
-POST https://api-pacientes-vh6j.onrender.com/api/auth/login
-
-Body (JSON):
-```json
-
-{
-  "email": "kelly@email.com",
-  "senha": "001010"
-}
-```
-🧭 Como Executar Localmente
-
-### 1️⃣ Clone o repositório
+**1. Clone o repositório e acesse o diretório:**
 ```bash
-
 git clone https://github.com/KC-Neves/clinica-online.git
 cd clinica-online
-
-2️⃣ Instale as dependências
-
-cd backend
-npm install
-cd ../frontend
-npm install
-
-3️⃣ Crie o arquivo .env no backend
-
-PORT=5000
-MONGO_URI=sua_string_de_conexao
-JWT_SECRET=minha_chave_supersegura
-
-4️⃣ Rode o backend
-
-cd backend
-npm run dev
-
-5️⃣ Rode o frontend
-
-cd frontend
-npm run dev
-
-Acesse no navegador:
-👉 http://localhost:5173
 ```
 
+**2. Instale as dependências de cada ecossistema:**
+```bash
+cd backend && npm install
+cd ../frontend && npm install
+```
+
+**3. Configure as variáveis de ambiente:**
+Crie um arquivo `.env` na raiz da pasta `backend` com as chaves:
+```env
+PORT=5000
+MONGO_URI=sua_string_de_conexao_mongodb
+JWT_SECRET=minha_chave_supersegura
+```
+
+**4. Inicie o servidor backend:**
+```bash
+cd backend && npm run dev
+```
+
+**5. Inicie a interface frontend:**
+```bash
+cd ../frontend && npm run dev
+```
+Acesse no seu navegador em: 👉 `http://localhost:5173`
+
 ---
 
-## 🧠 Próximas Funcionalidades 
-
-🕒 Sistema de agendamento de consultas
-
-💬 Notificações automáticas de lembrete
-
-👨‍⚕️ Cadastro e login de médicos
-
-📈 Dashboard de consultas por período
+## 🧠 Próximas Funcionalidades
+- [ ] **Módulo Médico:** Cadastro, login e fluxos de agendas segmentados por profissional.
+- [ ] **Notificações Automatizadas:** Alertas e lembretes de exames e consultas pendentes.
+- [ ] **Histórico Temporal:** Painel de evolução clínica de consultas por períodos personalizados.
 
 ---
 
-## 👩‍💻 Desenvolvido por:
-
-Kelly Cristina Neves
-
-💼 GitHub: KC-Neves
+## 👩‍💻 Desenvolvido por
+**Kelly Cristina Neves Silva**
+- 💼 LinkedIn / GitHub: [@KC-Neves](https://github.com/KC-Neves)
+- 🌐 Projeto Integrado: HealthTech & MedTech Solutions
